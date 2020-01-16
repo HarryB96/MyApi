@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using MyApi.Models;
+using System.Diagnostics;
 
 namespace MyApi
 {
@@ -25,6 +28,9 @@ namespace MyApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var password = Environment.GetEnvironmentVariable("DbPassword");
+            var connectionString = $"Server=tcp:harryspartaserver.database.windows.net,1433;Initial Catalog=GymDatabase;Persist Security Info=False;User ID=HarryBarnett;Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            services.AddDbContext<GymDbContext>(opt => opt.UseSqlServer(connectionString));
             services.AddControllers();
         }
 

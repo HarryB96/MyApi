@@ -11,6 +11,8 @@ namespace MyApi
 {
     public class Program
     {
+        public static readonly string conn = Environment.GetEnvironmentVariable("GymDb");
+
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

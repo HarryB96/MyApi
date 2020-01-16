@@ -8,4 +8,35 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\DayController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Exercise\Create.cshtml" />
+    <Content Remove="Views\Exercise\Edit.cshtml" />
+    <Content Remove="Views\Exercise\Details.cshtml" />
+    <Content Remove="Views\Exercise\Delete.cshtml" />
+    <Content Remove="Views\Exercise\Index.cshtml" />
+    <Content Remove="Views\Day\Create.cshtml" />
+    <Content Remove="Views\Day\Edit.cshtml" />
+    <Content Remove="Views\Day\Details.cshtml" />
+    <Content Remove="Views\Day\Delete.cshtml" />
+    <Content Remove="Views\Day\Index.cshtml" />
+  </ItemGroup>
 </Project>
